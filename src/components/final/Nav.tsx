@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { nav, brand } from "@/lib/content-fliesen";
+import Image from "next/image";
+import { nav } from "@/lib/content-fliesen";
 import { t } from "./tokens";
 
 export function Nav() {
@@ -13,13 +14,15 @@ export function Nav() {
       style={{ borderColor: t.stone + "40", backgroundColor: t.surface }}
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <a href="#top" className="flex items-baseline gap-2">
-          <span className="text-lg font-medium tracking-tight" style={{ ...t.headingFont, color: t.ink }}>
-            {brand.short}
-          </span>
-          <span className="text-[10px] tracking-[0.15em] uppercase" style={{ ...t.bodyFont, color: t.stone }}>
-            Fliesenfachbetrieb
-          </span>
+        <a href="#top" className="flex items-center">
+          <Image
+            src="/logo.png"
+            alt="Yildiz Bau – Fliesenfachbetrieb Bielefeld"
+            width={1142}
+            height={497}
+            priority
+            className="h-9 w-auto md:h-11"
+          />
         </a>
 
         <nav className="hidden items-center gap-8 md:flex" style={t.bodyFont}>

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { brand, nav, footer } from "@/lib/content-fliesen";
 import { t } from "./tokens";
 
@@ -6,9 +7,13 @@ export function Footer() {
     <footer className="py-12" style={{ backgroundColor: t.surface }}>
       <div className="mx-auto grid max-w-6xl gap-10 px-6 sm:grid-cols-3">
         <div>
-          <p className="text-base font-medium" style={{ ...t.headingFont, color: t.ink }}>
-            {brand.name}
-          </p>
+          <Image
+            src="/logo.png"
+            alt="Yildiz Bau – Fliesenfachbetrieb Bielefeld"
+            width={1142}
+            height={497}
+            className="h-11 w-auto"
+          />
           <p className="mt-3 text-sm leading-relaxed" style={{ ...t.bodyFont, color: t.stone }}>
             {footer.addressPlaceholder}
           </p>
