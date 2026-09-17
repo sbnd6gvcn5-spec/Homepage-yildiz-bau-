@@ -1,21 +1,26 @@
-// Inhalt für die finale Homepage: Yildiz als spezialisierter
-// Fliesenleger-Handwerksbetrieb in Bielefeld & OWL. Ausschließlich
-// Fliesenarbeiten — keine allgemeinen Bauleistungen.
-// Bewusst ohne verifizierbare Firmenfakten: kein Gründungsjahr, keine
-// Meisterbetrieb-Angabe, keine Mitarbeiterzahl, keine Bewertungen, keine
-// Projektzahlen. Kontaktdaten bleiben Platzhalter.
+// Inhalt für die finale Website: Yildiz, Fliesenfachbetrieb in Bielefeld & OWL.
+// Schwerpunkt Fliesenarbeiten, ergänzt um angrenzende Gewerke (Treppen,
+// Fensterbänke, Naturstein/Betonwerkstein, kleinere Maurerarbeiten, Innenputz,
+// Abriss & Sanierung).
+// Keine erfundenen Firmenfakten: kein Gründungsjahr, keine Mitarbeiterzahl,
+// keine Bewertungen, keine Projektzahlen, ausdrücklich kein "Meisterbetrieb".
+// Angaben zu Familienunternehmen und Handwerkskammer-Eintrag stammen vom Kunden.
+// Kontaktdaten bleiben Platzhalter.
 
 export const brand = {
   name: "Yildiz Bauunternehmen",
   short: "Yildiz Bau",
 };
 
+// Ankerlinks sind seitenübergreifend absolut ("/#..."), damit sie auch von
+// /ueber-uns aus auf die Startseite springen.
 export const nav = {
   links: [
-    { label: "Leistungen", href: "#leistungen" },
-    { label: "Referenzen", href: "#referenzen" },
-    { label: "Prozess", href: "#prozess" },
-    { label: "Kontakt", href: "#kontakt" },
+    { label: "Leistungen", href: "/#leistungen" },
+    { label: "Referenzen", href: "/#referenzen" },
+    { label: "Prozess", href: "/#prozess" },
+    { label: "Über uns", href: "/ueber-uns" },
+    { label: "Kontakt", href: "/#kontakt" },
   ],
   cta: "Angebot anfragen",
 };
@@ -48,12 +53,11 @@ export const trust = {
       desc: "Ein Ansprechpartner von der Planung bis zur Übergabe.",
     },
   ],
-  logosNote: "Referenz- und Partnerlogos (Platzhalter)",
 };
 
 export const services = {
   heading: "Leistungen",
-  sub: "Fliesenarbeiten für Boden, Wand und Bad — aus einer Hand.",
+  sub: "Fliesenarbeiten und angrenzende Gewerke — aus einer Hand.",
   items: [
     {
       title: "Feinsteinzeug / Großformatfliesen",
@@ -71,6 +75,30 @@ export const services = {
       title: "Naturstein- / Feinsteinverlegung",
       desc: "Verlegung von Naturstein und Feinsteinzeug unter Berücksichtigung materialspezifischer Anforderungen.",
     },
+    {
+      title: "Treppenverkleidung",
+      desc: "Verkleidung von Treppen mit Naturstein, Feinsteinzeug/Keramik oder Betonwerkstein.",
+    },
+    {
+      title: "Fensterbänke",
+      desc: "Fertigung und Verlegung von Fensterbänken aus Naturstein, Betonwerkstein oder Keramik.",
+    },
+    {
+      title: "Naturstein- & Betonwerkstein-Arbeiten",
+      desc: "Verarbeitung von Naturstein und Betonwerkstein für Böden, Verkleidungen und Sonderlösungen.",
+    },
+    {
+      title: "Kleinere Maurerarbeiten",
+      desc: "Ausführung kleinerer Maurerarbeiten im Zuge von Sanierung und Umbau.",
+    },
+    {
+      title: "Innenputz",
+      desc: "Putzarbeiten im Innenbereich als Untergrund für Fliesen und Oberflächen.",
+    },
+    {
+      title: "Abriss- & Sanierungsarbeiten",
+      desc: "Rückbau und Sanierung im Rahmen von Renovierungs- und Umbauprojekten.",
+    },
   ],
 };
 
@@ -81,9 +109,9 @@ export const references = {
     { title: "Projekt Platzhalter 01", tag: "Großformat" },
     { title: "Projekt Platzhalter 02", tag: "Bad & Dusche" },
     { title: "Projekt Platzhalter 03", tag: "Naturstein" },
-    { title: "Projekt Platzhalter 04", tag: "Wohnbereich" },
-    { title: "Projekt Platzhalter 05", tag: "Bodenfliesen" },
-    { title: "Projekt Platzhalter 06", tag: "Wandfliesen" },
+    { title: "Projekt Platzhalter 04", tag: "Treppe" },
+    { title: "Projekt Platzhalter 05", tag: "Fensterbänke" },
+    { title: "Projekt Platzhalter 06", tag: "Sanierung" },
   ],
 };
 
@@ -100,12 +128,40 @@ export const process = {
       desc: "Nachvollziehbares Angebot mit Material- und Leistungsübersicht.",
     },
     {
-      title: "Verlegung",
-      desc: "Untergrundvorbereitung, Abdichtung und fachgerechte Verlegung inklusive Verfugung.",
+      title: "Ausführung",
+      desc: "Untergrundvorbereitung, Abdichtung und fachgerechte Ausführung inklusive Verfugung.",
     },
     {
       title: "Übergabe & Reinigung",
       desc: "Endreinigung der Flächen und Abnahme des fertigen Ergebnisses.",
+    },
+  ],
+};
+
+export const about = {
+  eyebrow: "Über uns",
+  headline: "Ein Familienbetrieb für Fliesen- und Steinarbeiten.",
+  lead: "Yildiz Bauunternehmen ist ein familiengeführter Handwerksbetrieb aus Bielefeld mit Schwerpunkt auf Fliesen-, Naturstein- und Betonwerksteinarbeiten.",
+  paragraphs: [
+    "Als Familienunternehmen sind wir langjährig am Markt und arbeiten mit kurzen Wegen: Sie sprechen direkt mit den Personen, die Ihr Projekt auch ausführen.",
+    "Wir richten uns flexibel nach Ihrem Bauablauf und halten getroffene Absprachen ein — von der Begehung über die Ausführung bis zur Übergabe.",
+  ],
+  values: [
+    {
+      title: "Familienunternehmen",
+      desc: "Inhabergeführt, mit persönlicher Betreuung und direkter Ansprache.",
+    },
+    {
+      title: "Langjährig am Markt",
+      desc: "Erfahrung aus Fliesen-, Naturstein- und Sanierungsprojekten.",
+    },
+    {
+      title: "Flexibel & zuverlässig",
+      desc: "Abstimmung auf Ihren Zeitplan und verbindliche Absprachen.",
+    },
+    {
+      title: "Eingetragener Handwerksbetrieb",
+      desc: "Der Betrieb ist in der Handwerkskammer eingetragen.",
     },
   ],
 };

@@ -25,20 +25,6 @@ export function Trust() {
           ))}
         </div>
 
-        <p className="mt-12 text-xs tracking-wide uppercase" style={{ ...t.bodyFont, color: t.stone }}>
-          {trust.logosNote}
-        </p>
-        <div className="mt-4 flex flex-wrap gap-4">
-          {[1, 2, 3, 4].map((n) => (
-            <div
-              key={n}
-              className="flex h-12 w-28 items-center justify-center border text-[10px] tracking-wide uppercase"
-              style={{ ...t.bodyFont, borderColor: t.stone + "40", color: t.stone }}
-            >
-              Logo {n}
-            </div>
-          ))}
-        </div>
       </div>
     </section>
   );
