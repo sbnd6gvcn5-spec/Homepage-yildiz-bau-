@@ -18,8 +18,8 @@ export function Nav() {
           <Image
             src="/logo.png"
             alt="Yildiz Bau – Fliesenfachbetrieb Bielefeld"
-            width={1142}
-            height={497}
+            width={1152}
+            height={504}
             priority
             className="h-9 w-auto md:h-11"
           />

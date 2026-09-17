@@ -10,8 +10,8 @@ export function Footer() {
           <Image
             src="/logo.png"
             alt="Yildiz Bau – Fliesenfachbetrieb Bielefeld"
-            width={1142}
-            height={497}
+            width={1152}
+            height={504}
             className="h-11 w-auto"
           />
           <p className="mt-3 text-sm leading-relaxed" style={{ ...t.bodyFont, color: t.stone }}>
