@@ -42,6 +42,7 @@ export function Nav() {
         </nav>
 
         <button
+          id="mobile-menu-toggle"
           type="button"
           className="flex flex-col gap-1.5 p-2 md:hidden"
           aria-label="Menü öffnen"
@@ -55,6 +56,7 @@ export function Nav() {
 
       {open && (
         <nav
+          id="mobile-menu"
           className="flex flex-col gap-1 border-t-2 px-6 py-4 md:hidden"
           style={{ borderColor: a.ink, ...a.bodyFont }}
         >

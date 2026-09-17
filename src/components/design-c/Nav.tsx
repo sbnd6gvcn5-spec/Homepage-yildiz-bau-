@@ -38,6 +38,7 @@ export function Nav() {
         </nav>
 
         <button
+          id="mobile-menu-toggle"
           type="button"
           className="flex flex-col gap-1.5 p-2 md:hidden"
           aria-label="Menü öffnen"
@@ -50,7 +51,7 @@ export function Nav() {
       </div>
 
       {open && (
-        <nav className="flex flex-col gap-1 px-6 pb-6 md:hidden">
+        <nav id="mobile-menu" className="flex flex-col gap-1 px-6 pb-6 md:hidden">
           {nav.links.map((link) => (
             <a
               key={link.href}
