@@ -7,6 +7,8 @@ import {
   Public_Sans,
   Bricolage_Grotesque,
   Manrope,
+  Newsreader,
+  Instrument_Sans,
 } from "next/font/google";
 import "./globals.css";
 
@@ -40,10 +42,21 @@ const bricolage = Bricolage_Grotesque({
 });
 const manrope = Manrope({ variable: "--font-manrope", subsets: ["latin"] });
 
+// Finale Homepage (Fliesenfachbetrieb)
+const newsreader = Newsreader({
+  variable: "--font-newsreader",
+  style: ["normal", "italic"],
+  subsets: ["latin"],
+});
+const instrumentSans = Instrument_Sans({
+  variable: "--font-instrument-sans",
+  subsets: ["latin"],
+});
+
 export const metadata: Metadata = {
-  title: "Yildiz Bauunternehmen — Design-Prototypen",
+  title: "Yildiz Bauunternehmen — Fliesenfachbetrieb Bielefeld & OWL",
   description:
-    "Drei Homepage-Prototypen für Yildiz Bauunternehmen: Werkstoff, Präzision, Signatur.",
+    "Fliesenarbeiten für Bielefeld und OWL: Feinsteinzeug, Großformat, bodengleiche Duschen und Naturstein.",
 };
 
 const fontVariables = [
@@ -54,6 +67,8 @@ const fontVariables = [
   publicSans.variable,
   bricolage.variable,
   manrope.variable,
+  newsreader.variable,
+  instrumentSans.variable,
 ].join(" ");
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
