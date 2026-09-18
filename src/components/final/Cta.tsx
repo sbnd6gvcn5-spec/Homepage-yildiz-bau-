@@ -17,7 +17,7 @@ export function Cta() {
           </p>
         </div>
         <a
-          href="/#kontakt"
+          href="#kontakt"
           className="shrink-0 px-8 py-3 text-sm font-medium text-white transition-opacity hover:opacity-90"
           style={{ ...t.bodyFont, backgroundColor: t.terracotta }}
         >

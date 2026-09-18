@@ -12,15 +12,15 @@ export const brand = {
   short: "Yildiz Bau",
 };
 
-// Ankerlinks sind seitenübergreifend absolut ("/#..."), damit sie auch von
-// /ueber-uns aus auf die Startseite springen.
+// Die Website ist ein Onepager: alle Navigationspunkte sind Sprungmarken
+// innerhalb der Startseite, in der Reihenfolge der Sektionen.
 export const nav = {
   links: [
-    { label: "Leistungen", href: "/#leistungen" },
-    { label: "Referenzen", href: "/#referenzen" },
-    { label: "Prozess", href: "/#prozess" },
-    { label: "Über uns", href: "/ueber-uns" },
-    { label: "Kontakt", href: "/#kontakt" },
+    { label: "Leistungen", href: "#leistungen" },
+    { label: "Referenzen", href: "#referenzen" },
+    { label: "Prozess", href: "#prozess" },
+    { label: "Über uns", href: "#ueber-uns" },
+    { label: "Kontakt", href: "#kontakt" },
   ],
   cta: "Angebot anfragen",
 };
