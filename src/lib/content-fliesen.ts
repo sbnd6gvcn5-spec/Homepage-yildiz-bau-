@@ -104,14 +104,38 @@ export const services = {
 
 export const references = {
   heading: "Referenzen",
-  sub: "Eine Auswahl unserer Arbeit (Platzhalterprojekte).",
+  sub: "Eine Auswahl ausgeführter Arbeiten.",
   items: [
-    { title: "Projekt Platzhalter 01", tag: "Großformat" },
-    { title: "Projekt Platzhalter 02", tag: "Bad & Dusche" },
-    { title: "Projekt Platzhalter 03", tag: "Naturstein" },
-    { title: "Projekt Platzhalter 04", tag: "Treppe" },
-    { title: "Projekt Platzhalter 05", tag: "Fensterbänke" },
-    { title: "Projekt Platzhalter 06", tag: "Sanierung" },
+    {
+      title: "Eingangsbereich",
+      tag: "Bodenfliesen",
+      src: "/referenzen/eingangsbereich-bodenfliesen.jpg",
+      alt: "Dunkel gesprenkelte Bodenfliesen im Eingangsbereich eines Gebäudes mit Glasfassade",
+    },
+    {
+      title: "Treppenanlage",
+      tag: "Treppenverkleidung",
+      src: "/referenzen/treppenverkleidung-naturstein.jpg",
+      alt: "Innentreppe mit grauem Naturstein verkleidet, Trittstufen und Setzstufen",
+    },
+    {
+      title: "Hallenboden",
+      tag: "Verlegung",
+      src: "/referenzen/bodenverlegung-halle.jpg",
+      alt: "Verlegung dunkler Bodenplatten im Mörtelbett entlang einer Hallenwand",
+    },
+    {
+      title: "Lager- und Verkaufsraum",
+      tag: "Bodenfläche",
+      src: "/referenzen/bodenflaeche-lager.jpg",
+      alt: "Fertig verlegte dunkle Bodenfliesen in einem Lager- und Verkaufsraum",
+    },
+    {
+      title: "Treppe in hellem Naturstein",
+      tag: "Treppenverkleidung",
+      src: "/referenzen/treppenverkleidung-naturstein-hell.jpg",
+      alt: "Treppenstufen mit hellem Naturstein verkleidet, Zustand während der Bauphase",
+    },
   ],
 };
 

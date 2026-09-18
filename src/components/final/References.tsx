@@ -1,5 +1,5 @@
+import Image from "next/image";
 import { references } from "@/lib/content-fliesen";
-import { PlaceholderImage } from "@/components/placeholder-image";
 import { t } from "./tokens";
 
 export function References() {
@@ -15,26 +15,36 @@ export function References() {
           </p>
         </div>
 
-        <div className="mt-px grid gap-px sm:grid-cols-2 lg:grid-cols-3" style={{ backgroundColor: t.stone + "40" }}>
+        {/* Hairline-Raster über 1px-Ringe statt Container-Hintergrund: bei einer
+            unvollständigen letzten Reihe bliebe sonst eine leere Zelle sichtbar. */}
+        <div className="mt-px grid sm:grid-cols-2 lg:grid-cols-3">
           {references.items.map((item, i) => (
-            <div key={item.title} style={{ backgroundColor: t.surface }}>
-              <PlaceholderImage
-                className="aspect-[4/3] w-full"
-                style={{ color: t.stone, backgroundColor: t.sand }}
-                patternClassName="bg-[linear-gradient(currentColor_1px,transparent_1px),linear-gradient(90deg,currentColor_1px,transparent_1px)] bg-[size:40px_40px] opacity-[0.1]"
-              />
-              <div className="flex flex-wrap items-baseline justify-between gap-2 p-4">
-                <div>
+            <div
+              key={item.title}
+              style={{ backgroundColor: t.surface, boxShadow: `0 0 0 1px ${t.stone}40` }}
+            >
+              <div className="relative aspect-[4/3] w-full overflow-hidden" style={{ backgroundColor: t.sand }}>
+                <Image
+                  src={item.src}
+                  alt={item.alt}
+                  fill
+                  loading="lazy"
+                  sizes="(min-width: 1024px) 384px, (min-width: 640px) 50vw, 100vw"
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-4">
+                <div className="flex items-baseline justify-between gap-3">
                   <span className="text-xs" style={{ ...t.bodyFont, color: t.terracotta }}>
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <h3 className="mt-1 text-base font-medium" style={{ ...t.headingFont, color: t.ink }}>
-                    {item.title}
-                  </h3>
+                  <span className="text-xs tracking-wide uppercase" style={{ ...t.bodyFont, color: t.stone }}>
+                    {item.tag}
+                  </span>
                 </div>
-                <span className="text-xs tracking-wide uppercase" style={{ ...t.bodyFont, color: t.stone }}>
-                  {item.tag}
-                </span>
+                <h3 className="mt-1 text-base font-medium" style={{ ...t.headingFont, color: t.ink }}>
+                  {item.title}
+                </h3>
               </div>
             </div>
           ))}
