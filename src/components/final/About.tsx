@@ -47,7 +47,9 @@ export function About() {
           </div>
         </div>
 
-        <div className="mt-12 grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 md:mt-16">
+        {/* Drei Spalten, nicht vier: sechs Werte ergeben so zwei volle
+            Reihen statt einer angebrochenen. */}
+        <div className="mt-12 grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 md:mt-16">
           {about.values.map((v, i) => (
             <div key={v.title} data-reveal-item className="border-t pt-4" style={{ borderColor: t.stone + "40" }}>
               <span className="text-xs font-medium tracking-[0.2em]" style={{ ...t.bodyFont, color: t.terracotta }}>

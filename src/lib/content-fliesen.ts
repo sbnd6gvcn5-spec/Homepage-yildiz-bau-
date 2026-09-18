@@ -73,10 +73,6 @@ export const services = {
       desc: "Abdichtung, Gefälleaufbau und Fliesenarbeiten für bodengleiche Duschbereiche.",
     },
     {
-      title: "Naturstein- / Feinsteinverlegung",
-      desc: "Verlegung von Naturstein und Feinsteinzeug unter Berücksichtigung materialspezifischer Anforderungen.",
-    },
-    {
       title: "Treppenverkleidung",
       desc: "Verkleidung von Treppen mit Naturstein, Feinsteinzeug/Keramik oder Betonwerkstein.",
     },
@@ -189,6 +185,14 @@ export const about = {
     {
       title: "Langjährig am Markt",
       desc: "Erfahrung aus Fliesen-, Naturstein- und Sanierungsprojekten.",
+    },
+    {
+      title: "Erfahrung mit Großprojekten",
+      desc: "Ausgeführte Arbeiten unter anderem in Wohnanlagen, Schulen und Einkaufszentren.",
+    },
+    {
+      title: "Geschultes Team",
+      desc: "Derzeit fünf geschulte Mitarbeiter, bei Bedarf unterstützt durch qualifizierte Subunternehmer.",
     },
     {
       title: "Flexibel & zuverlässig",
