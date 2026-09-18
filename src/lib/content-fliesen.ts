@@ -200,6 +200,24 @@ export const about = {
   ],
 };
 
+// Provisorische Beispielnummer fuer "Anrufen" und WhatsApp. Sie ist bewusst
+// als Platzhalter erkennbar und wird vom Kunden noch ersetzt.
+// TODO: echte Telefonnummer einsetzen
+export const contact = {
+  phoneDisplay: "+49 521 1234567",
+  phoneHref: "tel:+495211234567",
+  // wa.me erwartet die Nummer in E.164 ohne Plus und ohne Trennzeichen.
+  whatsappHref: "https://wa.me/495211234567",
+};
+
+export const floatingCta = {
+  offer: "Angebot anfragen",
+  call: "Anrufen",
+  whatsapp: "WhatsApp",
+  callAria: "Anrufen unter +49 521 1234567 (Platzhalternummer)",
+  whatsappAria: "WhatsApp-Chat mit +49 521 1234567 (Platzhalternummer)",
+};
+
 export const cta = {
   heading: "Bereit für Ihr Fliesenprojekt?",
   sub: "Schildern Sie uns Ihr Vorhaben — wir melden uns mit den nächsten Schritten.",

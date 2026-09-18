@@ -7,3 +7,128 @@ html {
 body {
   font-family: system-ui, sans-serif;
 }
+
+/* ---------------------------------------------------------------------------
+   Sticky-Kopf und schwebende Kontakt-Elemente.
+
+   Diese Zustände hängen am Attribut [data-scrolled] bzw. [data-near-end] eines
+   Vorfahren (in der App: <html>, gesetzt von ScrollState.tsx; im statischen
+   Vorschau-Schnappschuss: das Wurzel-<div>). Deshalb als echtes CSS und nicht
+   als umgeschaltete Tailwind-Klassen — beide Umgebungen teilen sich so
+   denselben Vertrag.
+
+   Farben kommen per CSS-Variable aus tokens.ts, damit die Palette an einer
+   Stelle bleibt.
+--------------------------------------------------------------------------- */
+
+/* Der Kopf ist fixiert, nicht sticky: so ändert das Kompakterwerden beim
+   Scrollen die Dokumenthöhe nicht und es entsteht kein Layout-Shift. */
+.site-header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 40;
+  background-color: var(--header-bg);
+  transition:
+    background-color 200ms ease,
+    backdrop-filter 200ms ease;
+}
+
+.site-header-bar {
+  padding-block: 1rem;
+  transition: padding 200ms ease;
+}
+
+.site-header-logo {
+  height: 2.25rem;
+  transition: height 200ms ease;
+}
+
+/* Platzhalter im Fluss: hält exakt die volle Kopfhöhe frei
+   (Logo + 2× padding-block + 1px Trennlinie). */
+.site-header-spacer {
+  height: calc(2.25rem + 2rem + 1px);
+  /* Nicht schrumpfen: im statischen Vorschau-Schnappschuss ist das
+     Wurzelelement ein Flex-Container, sonst faellt der Platzhalter auf 0. */
+  flex: none;
+}
+
+@media (min-width: 768px) {
+  .site-header-logo {
+    height: 2.75rem;
+  }
+
+  .site-header-spacer {
+    height: calc(2.75rem + 2rem + 1px);
+  }
+}
+
+[data-scrolled="true"] .site-header {
+  background-color: var(--header-bg-scrolled);
+  /* Nur unpraefixt notieren: der CSS-Transformer setzt die noetigen Prefixe
+     selbst, beide Schreibweisen faltet er faelschlich auf -webkit- zusammen. */
+  backdrop-filter: saturate(180%) blur(10px);
+}
+
+[data-scrolled="true"] .site-header-bar {
+  padding-block: 0.625rem;
+}
+
+[data-scrolled="true"] .site-header-logo {
+  height: 1.875rem;
+}
+
+@media (min-width: 768px) {
+  [data-scrolled="true"] .site-header-logo {
+    height: 2.25rem;
+  }
+}
+
+/* Sprungmarken nicht unter den fixierten Kopf scrollen lassen. */
+html,
+.site-root {
+  scroll-padding-top: 5rem;
+}
+
+/* Platz für die feste Kontaktleiste am unteren Rand, damit sie nie den
+   Footer überdeckt. Ab md entfällt sie zugunsten des Floating-Buttons. */
+.site-root {
+  /* Leistenhöhe (h-14) + 1px Trennlinie + Safe Area. */
+  padding-bottom: calc(3.5rem + 1px + env(safe-area-inset-bottom, 0px));
+}
+
+@media (min-width: 768px) {
+  .site-root {
+    padding-bottom: 0;
+  }
+}
+
+/* Der Floating-Button verschwindet, sobald der Kontaktbereich im Bild ist —
+   dort steht der gleiche Aufruf bereits im Inhalt, und so überlagert er
+   weder Kontaktsektion noch Footer. */
+.floating-cta {
+  transition:
+    opacity 200ms ease,
+    transform 200ms ease;
+}
+
+[data-near-end="true"] .floating-cta {
+  opacity: 0;
+  transform: translateY(0.5rem);
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html,
+  .site-root {
+    scroll-behavior: auto;
+  }
+
+  .site-header,
+  .site-header-bar,
+  .site-header-logo,
+  .floating-cta {
+    transition: none;
+  }
+}

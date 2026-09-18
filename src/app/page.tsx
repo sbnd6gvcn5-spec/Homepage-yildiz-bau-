@@ -7,10 +7,13 @@ import { Process } from "@/components/final/Process";
 import { About } from "@/components/final/About";
 import { Cta } from "@/components/final/Cta";
 import { Footer } from "@/components/final/Footer";
+import { FloatingContact } from "@/components/final/FloatingContact";
+import { ScrollState } from "@/components/final/ScrollState";
 
 export default function Home() {
   return (
-    <div className="overflow-x-hidden">
+    <div className="site-root overflow-x-hidden">
+      <ScrollState />
       <Nav />
       <main>
         <Hero />
@@ -22,6 +25,7 @@ export default function Home() {
         <Cta />
       </main>
       <Footer />
+      <FloatingContact />
     </div>
   );
 }
