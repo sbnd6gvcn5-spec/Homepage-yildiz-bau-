@@ -1,5 +1,5 @@
+import Image from "next/image";
 import { hero } from "@/lib/content-fliesen";
-import { PlaceholderImage } from "@/components/placeholder-image";
 import { t } from "./tokens";
 
 export function Hero() {
@@ -42,12 +42,19 @@ export function Hero() {
         </div>
 
         <div className="border" style={{ borderColor: t.stone + "40" }}>
-          <PlaceholderImage
-            label="Bild-Platzhalter · Großformatfliesen"
-            className="aspect-[4/5] w-full md:aspect-square"
-            patternClassName="bg-[linear-gradient(currentColor_1px,transparent_1px),linear-gradient(90deg,currentColor_1px,transparent_1px)] bg-[size:48px_48px] opacity-[0.12]"
-            style={{ color: t.stone, backgroundColor: t.surface }}
-          />
+          <div
+            className="relative aspect-[4/5] w-full overflow-hidden md:aspect-square"
+            style={{ backgroundColor: t.surface }}
+          >
+            <Image
+              src="/hero.jpg"
+              alt="Treppenanlage mit hellem Naturstein verkleidet – Yildiz Bau"
+              fill
+              priority
+              sizes="(min-width: 768px) 50vw, 100vw"
+              className="object-cover"
+            />
+          </div>
         </div>
       </div>
     </section>
