@@ -6,7 +6,9 @@ export function References() {
   return (
     <section id="referenzen" className="border-b py-16 md:py-24" style={{ backgroundColor: t.surface, borderColor: t.stone + "40" }}>
       <div className="mx-auto max-w-6xl px-6">
-        <div className="flex flex-col gap-4 border-b pb-6 sm:flex-row sm:items-end sm:justify-between" style={{ borderColor: t.stone + "40" }}>
+        <div
+          data-reveal-item
+          className="flex flex-col gap-4 border-b pb-6 sm:flex-row sm:items-end sm:justify-between" style={{ borderColor: t.stone + "40" }}>
           <h2 className="text-2xl font-medium sm:text-3xl" style={{ ...t.headingFont, color: t.ink }}>
             {references.heading}
           </h2>
@@ -21,6 +23,7 @@ export function References() {
           {references.items.map((item, i) => (
             <div
               key={item.title}
+              data-reveal-item
               style={{ backgroundColor: t.surface, boxShadow: `0 0 0 1px ${t.stone}40` }}
             >
               <div className="relative aspect-[4/3] w-full overflow-hidden" style={{ backgroundColor: t.sand }}>

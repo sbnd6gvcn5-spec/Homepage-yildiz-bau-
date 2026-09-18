@@ -71,9 +71,19 @@ const fontVariables = [
   instrumentSans.variable,
 ].join(" ");
 
+// Schaltet den verborgenen Startzustand der Einblendungen frei, bevor der
+// Browser zum ersten Mal zeichnet — sonst blitzt der Inhalt kurz sichtbar auf.
+// Der Timeout ist das Sicherheitsnetz: bleibt die Hydration aus, meldet sich
+// ScrollState.tsx nie mit data-reveal-active, und der Inhalt wird sichtbar,
+// statt unsichtbar haengen zu bleiben.
+const revealBootstrap = `document.documentElement.dataset.reveal="on";setTimeout(function(){if(document.documentElement.dataset.revealActive!=="1")document.documentElement.removeAttribute("data-reveal")},2500)`;
+
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="de" className={`${fontVariables} h-full antialiased`}>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: revealBootstrap }} />
+      </head>
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );

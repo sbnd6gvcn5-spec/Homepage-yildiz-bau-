@@ -5,7 +5,7 @@ export function Cta() {
   return (
     <section id="kontakt" className="border-b py-16 md:py-24" style={{ backgroundColor: t.ink, borderColor: t.stone + "40" }}>
       <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-8 px-6 sm:flex-row sm:items-end">
-        <div>
+        <div data-reveal-item>
           <p className="text-xs font-medium tracking-[0.2em] uppercase" style={{ ...t.bodyFont, color: t.terracotta }}>
             Kontakt
           </p>
@@ -17,6 +17,7 @@ export function Cta() {
           </p>
         </div>
         <a
+          data-reveal-item
           href="/#kontakt"
           className="shrink-0 px-8 py-3 text-sm font-medium text-white transition-opacity hover:opacity-90"
           style={{ ...t.bodyFont, backgroundColor: t.terracotta }}

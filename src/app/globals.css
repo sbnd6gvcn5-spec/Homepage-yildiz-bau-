@@ -137,3 +137,53 @@ html,
     transition: none;
   }
 }
+
+/* ---------------------------------------------------------------------------
+   Einblenden beim Scrollen.
+
+   Grundzustand ist bewusst "sichtbar": ohne JavaScript, bei fehlgeschlagener
+   Hydration oder in einem Crawler steht der Inhalt da. Erst das Inline-Skript
+   in layout.tsx setzt [data-reveal="on"] auf <html> und schaltet damit den
+   verborgenen Startzustand frei; ScrollState.tsx blendet dann ein.
+
+   Animiert werden ausschliesslich opacity und transform - beide loesen kein
+   Layout aus, der Platz bleibt also von Anfang an reserviert.
+--------------------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: no-preference) {
+  /* Ohne JS, aber mit Scroll-Timeline (z. B. die statische Vorschau):
+     dieselbe Bewegung rein deklarativ, ohne Main-Thread-Arbeit. */
+  @supports (animation-timeline: view()) {
+    [data-reveal-item] {
+      animation: reveal-in linear both;
+      animation-timeline: view();
+      animation-range: entry 8% entry 42%;
+    }
+  }
+
+  /* JS-Pfad: gewinnt ueber die Regel oben (hoehere Spezifitaet). */
+  [data-reveal="on"] [data-reveal-item] {
+    animation: none;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  [data-reveal="on"] [data-reveal-item].is-revealed {
+    opacity: 1;
+    transform: none;
+    transition:
+      opacity 520ms cubic-bezier(0.22, 0.61, 0.36, 1),
+      transform 520ms cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+}
+
+@keyframes reveal-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}

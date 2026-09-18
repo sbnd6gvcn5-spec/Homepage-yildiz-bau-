@@ -8,6 +8,7 @@ export function Hero() {
       <div className="mx-auto grid max-w-6xl gap-10 px-6 py-16 md:grid-cols-[1.1fr_1fr] md:items-center md:py-24">
         <div>
           <p
+            data-reveal-item
             className="mb-4 flex items-center gap-2 text-xs font-medium tracking-[0.2em] uppercase"
             style={{ ...t.bodyFont, color: t.terracotta }}
           >
@@ -15,15 +16,16 @@ export function Hero() {
             {hero.eyebrow}
           </p>
           <h1
+            data-reveal-item
             className="text-4xl leading-[1.15] font-medium tracking-tight sm:text-5xl lg:text-6xl"
             style={{ ...t.headingFont, color: t.ink }}
           >
             {hero.headline}
           </h1>
-          <p className="mt-6 max-w-xl text-lg leading-relaxed" style={{ ...t.bodyFont, color: t.stone }}>
+          <p data-reveal-item className="mt-6 max-w-xl text-lg leading-relaxed" style={{ ...t.bodyFont, color: t.stone }}>
             {hero.sub}
           </p>
-          <div className="mt-8 flex flex-wrap gap-4">
+          <div data-reveal-item className="mt-8 flex flex-wrap gap-4">
             <a
               href="/#kontakt"
               className="px-6 py-3 text-sm font-medium text-white transition-opacity hover:opacity-90"
