@@ -29,12 +29,13 @@ export function ScrollState() {
       observers.push(observer);
     }
 
-    const contactSection = document.getElementById("kontakt");
-    if (contactSection) {
+    // Auf der Startseite der Kontaktbereich, auf den Rechtsseiten der Footer.
+    const endMarker = document.getElementById("kontakt") ?? document.querySelector("footer");
+    if (endMarker) {
       const observer = new IntersectionObserver(([entry]) => {
         root.dataset.nearEnd = String(entry.isIntersecting);
       });
-      observer.observe(contactSection);
+      observer.observe(endMarker);
       observers.push(observer);
     }
 

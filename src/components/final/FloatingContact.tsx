@@ -11,7 +11,7 @@ export function FloatingContact() {
   return (
     <>
       <a
-        href="#kontakt"
+        href="/#kontakt"
         className="floating-cta fixed right-6 bottom-6 z-30 hidden px-5 py-3 text-sm font-medium text-white shadow-lg hover:opacity-90 md:block"
         style={{ ...t.bodyFont, backgroundColor: t.terracotta }}
       >
@@ -27,7 +27,7 @@ export function FloatingContact() {
         }}
       >
         <a
-          href="#kontakt"
+          href="/#kontakt"
           className="flex h-14 items-center justify-center text-center text-sm font-medium text-white"
           style={{ ...t.bodyFont, backgroundColor: t.terracotta }}
         >

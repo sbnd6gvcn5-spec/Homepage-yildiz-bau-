@@ -25,14 +25,14 @@ export function Hero() {
           </p>
           <div className="mt-8 flex flex-wrap gap-4">
             <a
-              href="#kontakt"
+              href="/#kontakt"
               className="px-6 py-3 text-sm font-medium text-white transition-opacity hover:opacity-90"
               style={{ ...t.bodyFont, backgroundColor: t.terracotta }}
             >
               {hero.primaryCta}
             </a>
             <a
-              href="#leistungen"
+              href="/#leistungen"
               className="border px-6 py-3 text-sm font-medium transition-colors hover:opacity-70"
               style={{ ...t.bodyFont, borderColor: t.ink, color: t.ink }}
             >

@@ -53,9 +53,9 @@ export function Footer() {
           © {new Date().getFullYear()} {brand.name}
         </span>
         <div className="flex gap-4">
-          {footer.legalLinks.map((label) => (
-            <a key={label} href="#" className="hover:opacity-70">
-              {label}
+          {footer.legalLinks.map((link) => (
+            <a key={link.href} href={link.href} className="hover:opacity-70">
+              {link.label}
             </a>
           ))}
         </div>
