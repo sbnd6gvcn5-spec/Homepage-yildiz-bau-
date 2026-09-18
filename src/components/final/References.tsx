@@ -31,6 +31,7 @@ export function References() {
                   loading="lazy"
                   sizes="(min-width: 1024px) 384px, (min-width: 640px) 50vw, 100vw"
                   className="object-cover"
+                  style={"position" in item ? { objectPosition: item.position } : undefined}
                 />
               </div>
               <div className="p-4">

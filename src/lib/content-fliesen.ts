@@ -113,28 +113,38 @@ export const references = {
       alt: "Dunkel gesprenkelte Bodenfliesen im Eingangsbereich eines Gebäudes mit Glasfassade",
     },
     {
+      title: "Bad in Betonoptik",
+      tag: "Großformat",
+      src: "/referenzen/bad-betonoptik-grossformat.jpg",
+      alt: "Bad mit großformatigen Wand- und Bodenfliesen in Betonoptik, vorbereitete Anschlüsse für Waschbecken",
+      // Hochformat: Ausschnitt nach oben, damit Wandfläche und Anschlüsse im Bild bleiben.
+      position: "center 38%",
+    },
+    {
       title: "Treppenanlage",
       tag: "Treppenverkleidung",
       src: "/referenzen/treppenverkleidung-naturstein.jpg",
       alt: "Innentreppe mit grauem Naturstein verkleidet, Trittstufen und Setzstufen",
     },
     {
-      title: "Hallenboden",
-      tag: "Verlegung",
-      src: "/referenzen/bodenverlegung-halle.jpg",
-      alt: "Verlegung dunkler Bodenplatten im Mörtelbett entlang einer Hallenwand",
+      title: "Bodengleiche Dusche",
+      tag: "Bad & Dusche",
+      src: "/referenzen/bodengleiche-dusche-dachschraege.jpg",
+      alt: "Bodengleiche Dusche unter einer Dachschräge mit Akzentfläche in Steinoptik und Duschrinne",
+      // Hochformat: Ausschnitt nach unten, sonst fehlen Bodenfläche und Duschrinne.
+      position: "center 72%",
+    },
+    {
+      title: "Zugangsbereich mit Leitsystem",
+      tag: "Leitsystem",
+      src: "/referenzen/zugangsbereich-leitsystem.jpg",
+      alt: "Dunkler Fliesenboden mit weißem taktilem Leitsystem im Zugangsbereich eines öffentlichen Gebäudes",
     },
     {
       title: "Lager- und Verkaufsraum",
       tag: "Bodenfläche",
       src: "/referenzen/bodenflaeche-lager.jpg",
       alt: "Fertig verlegte dunkle Bodenfliesen in einem Lager- und Verkaufsraum",
-    },
-    {
-      title: "Treppe in hellem Naturstein",
-      tag: "Treppenverkleidung",
-      src: "/referenzen/treppenverkleidung-naturstein-hell.jpg",
-      alt: "Treppenstufen mit hellem Naturstein verkleidet, Zustand während der Bauphase",
     },
   ],
 };
