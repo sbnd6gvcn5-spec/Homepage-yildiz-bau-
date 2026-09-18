@@ -30,6 +30,11 @@ body {
   left: 0;
   z-index: 40;
   background-color: var(--header-bg);
+  /* Das Kompakterwerden aendert Hoehe und Innenabstand. Der Kopf ist
+     fixiert, sein Layout wirkt also ohnehin nicht auf den Fluss zurueck;
+     contain macht diese Isolation explizit, damit die 200ms Uebergang nur
+     den Kopf-Teilbaum neu umbrechen. */
+  contain: layout;
   transition:
     background-color 200ms ease,
     backdrop-filter 200ms ease;

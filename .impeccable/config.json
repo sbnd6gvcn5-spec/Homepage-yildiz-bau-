@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "layout-transition",
+        "value": "*",
+        "files": [
+          "src/app/globals.css"
+        ],
+        "createdAt": "2026-09-18T18:30:30.063Z",
+        "reason": "Bewusster Entwurf: das vom Nutzer angeforderte Kompakterwerden des Kopfs aendert Hoehe und Innenabstand; eine Transform-Alternative wuerde Logo und Navigationstext verzerren. Der Kopf ist position:fixed und traegt contain:layout, der Uebergang laeuft einmal pro Zustandswechsel (nicht pro Scroll-Frame) ueber ~10 Elemente. Messung mit Playwright: Layout-Shift 0 px auf Desktop und Mobil."
+      }
+    ]
+  }
+}
